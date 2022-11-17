@@ -32,11 +32,11 @@
     }
      function fetch() {
       // 登録するレコードを用意
-      var testClass = ncmb.DatzStore("FetchTest");
+      var testClass = ncmb.DataStore("FetchTest");
       testClass.fetch()
       .then(function(results) {
         var data=results.get("text");
-        var update =results.det("updateDate");
+        var update =results.get("updateDate");
         $("#message").html(data + ":" + update);
       })
     }
@@ -51,6 +51,7 @@
   <div id="button">
     <button id="btnA" class="btn" onclick="register()">Register</button>
     <button id="btnB" class="btn" onclick="fetch()">fetch</button>
+    <button id="btnC" class="btn" onclick="FetchAll()">Fetch All</button>
   </div>
   <div id="message">message area</div>
 </body>
